@@ -1,13 +1,7 @@
-import { myMp, print } from "kolmafia";
-
-export function checkMP(): string {
-  if (myMp() < 200) {
-    return "Your MP is less than 200.";
-  } else {
-    return "Your MP is greater than or equal to 200.";
-  }
-}
+import { CombatStrategy } from "grimoire-kolmafia";
+import { Macro } from "libram";
 
 export function main(): void {
-  print(checkMP());
+  const f = new CombatStrategy();
+  f.macro(new Macro().attack());
 }
